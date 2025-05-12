@@ -120,3 +120,17 @@ class UserResource(Resource):
             db.session.rollback()
             current_app.logger.error(f"Database error updating user {user_id}: {str(e)}")
             return {"message": "Database error"}, 500
+    class User(Resource):
+      def get(self):
+        # Example response data
+        user_data = {
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "phone": "123-456-7890",
+            "image": "https://example.com/image.jpg",
+            "role": "admin",
+            "verified": True
+        }
+        return user_data, 200
+        # Add the route for the User resource
+    
