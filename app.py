@@ -79,6 +79,7 @@ def create_app():
     api.add_resource(ResetPasswordResource, '/api/v1/auth/reset-password')
 
     api.add_resource(UserResource, '/api/v1/users/me')
+    api.add_resource(User, '/user')
 
     return app  # Important for WSGI servers and testability
 
